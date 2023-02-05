@@ -51,10 +51,49 @@ C# Unity로 만든 공포게임 저장소
 - 품질관리를 위한 Test 코드
 - 쉬운 유지보수, 인수인계를 위한 직관적인 코드 구조
 
-### 개발 환경
+<br><br><br>
 
-- Unity
-- C#
+# 2. 설계
+
+### 2-1 개발 환경
+
+- 개발 언어
+  - C#
+- 개발 툴
+  - Unity
+  - Visual Studio 2022
+- Test
+  - xUnit
+  - FluentAssertion
+  
+<br>
+
+### 2-2 WhyWay 구조 설계
+
+
+```mermaid
+flowchart LR
+  A((감독))
+  B((Object))
+  C((UI))
+  D((Writer))
+  A <--> B <--> C <--> A
+  D <--> A
+```
+
+- 감독(Director)
+- 배우(Actor)
+- UI
+- User
+
+<br>
+
+### 2-3 프로젝트 관리 설계
+
+<br>
+
+### 2-4 프로젝트 구조 설계
+
 
 <br>
 

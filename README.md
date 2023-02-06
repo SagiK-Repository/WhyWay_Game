@@ -23,7 +23,7 @@ C# Unity로 만든 공포게임 저장소
 
 # 1. 개요
 
-### 1-1 개요
+## 1-1 개요
 
 컴퓨터 프로그램에는 목적에 도움이 되는 프로그램들이 존재한다. 간단하게는 계산기, 크게는 인공지능 학습등 컴퓨터 연산을 활용해 인간이 하기 오래걸리는 일들을 빠르게 처리해준다.  
 이중 "즐거움"을 채워주는 목적인 게임또한 존재한다.  
@@ -32,7 +32,7 @@ C# Unity로 만든 공포게임 저장소
 이 게임제작을 통해, 다른 게임제작의 기반을 마련할 것이며 분석/설계/개발/테스트/배포를 통해 개발자로서 성장할 것으로 기대한다.
   
 
-### 1-2 요구사항
+## 1-2 요구사항
 
 - 3D 게임이다.
 - Git을 활용한 코드관리.
@@ -44,7 +44,7 @@ C# Unity로 만든 공포게임 저장소
     '''
 - 테스트 코드가 작성되어야 한다.
 
-### 1-3 요구사항 총족을 위한 기술적 내용
+## 1-3 요구사항 총족을 위한 기술적 내용
 
 - 최적화 고려
 - Git을 활용한 코드관리
@@ -55,20 +55,22 @@ C# Unity로 만든 공포게임 저장소
 
 # 2. 설계
 
-### 2-1 개발 환경
+## 2-1 개발 환경
 
-- 개발 언어
-  - C#
-- 개발 툴
-  - Unity
-  - Visual Studio 2022
-- Test
-  - xUnit
-  - FluentAssertion
+### 개발 언어
+- C#
+
+### 개발 툴
+- Unity
+- Visual Studio 2022
+
+### Test
+- xUnit
+- FluentAssertion
   
 <br>
 
-### 2-2 WhyWay 구조 설계
+## 2-2 WhyWay 구조 설계
 
 
 ```mermaid
@@ -88,37 +90,81 @@ flowchart LR
 
 <br>
 
-### 2-3 프로젝트 관리 설계
+## 2-3 프로젝트 관리 설계
 
-<br>
+### 관리 툴
 
-### 2-4 프로젝트 구조 설계
+- Git
+- Git Hub
+- Git Fork
 
-
-<br>
-
-# 계획
-
-### repository 구성
+### Git repository 구성
 - / : README.md을 배치
-- /doc : [문서].md를 배치
+- /Doc : [문서].md를 배치
 - /WhyWay : 프로젝트 폴더
-- /presentation : PPT 등을 배치
+- /Presentation : PPT 등을 배치
 
-### branch 구성
-- main : 문서작성 및 공개용, 문서 및 데모실행파일(.exe) 존재 (public)
-- release : 배포용, 모든 개발 결과가 이곳에 저장 (private)
-- dev : 개발용 공간 (private)
-- t(n) : 기능별 구현 공간 (private)
-- test : test 공간 (private)
+### Git Branch 구성
+
+- main : Release 배포, README.md 문서 (public)
+- Develop : 개발 통합 (private)
+- Feature(n) : 기능 구현 (private)
+- Release : 배포용, 모든 개발 결과가 이곳에 저장 (private)
+- Test : Test 공간 (private)
 
 <br>
 
-# 일정 계획
+## 2-4 프로젝트 구조 설계
+
+### 구조 적용
+- 에디터 스크립트를 통해 적용한다.
+
+### 구조 설계
+- *Editor : 유니티에 포함된 에디터 기능을 확장하기 위한 스크립터 저장
+- *Resorces : 게임 프로그램 외부 파일 로드 폴더
+- *Plugins : 아이폰, 안드로이드등 플랫폼으로 동작할 때 필요한 네이티브 플러그인을 저장
+- Asset
+  - Art
+    - Materials
+    - Models
+    - Textures
+  - Animation
+    - Animators
+    - AnimationClips
+  - Audio
+    - Music
+    - Sound
+  - Code
+    - Scripts
+      - Director
+      - Ator
+      - UI
+      - Common
+      - Tests
+    - Shaders
+  - Docs
+  - Level
+    - Prefabs
+    - Scenes
+    - UI
+- Logs
+- Library
+- Pakages
+- Project Setting : Unity Project 설정 파일 포함된 폴더
+
+### 참조
+
+- [[Unity] 유니티 프로젝트를 구성하기 위한 방법](https://velog.io/@jaehyeoksong0/unity-organizing-your-project)
+- [Projecr Structure (Unity Project 구조 및 모범 사례](https://drehzr.tistory.com/1306)
+- [(Unity) 유니티 프로젝트 폴더구조](https://gnam.tistory.com/8)
+
+<br>
+
+# 2-5 일정 설계
 
 ### 6개월 (대략) (4W = 1M)
 - (2W) 개요 작성       (2023.02.02.~02.16.)
-- (1M) 설계           (
+- (1M) 설계            (
 - (1M) 개발
 - (2W) 추가 설계
 - (2W) 추가 개발
@@ -127,3 +173,10 @@ flowchart LR
 - (1W) 배포 준비 및 출시
 
 <br>
+
+
+# 3. [] 기본 구축
+
+## 3-1 기본 구축
+
+### 프로젝트 구축
